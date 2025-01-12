@@ -1,4 +1,4 @@
-const configDivice = [
+export const configDivice = [
     {
         id: 'desktop',
         name: 'Desktop',
@@ -35,5 +35,3 @@ const configDivice = [
         widthMedia: '320px'
       }
     ];
-
-module.exports = {configDivice}
