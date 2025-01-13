@@ -2,7 +2,7 @@ import StudioEditor from '@grapesjs/studio-sdk/react';
 import 'grapesjs/dist/css/grapes.min.css';
 import '@grapesjs/studio-sdk/style';
 import grapesJsTailwind from 'grapesjs-tailwind';
-import { config } from '../utils/config';
+import { config } from '@/utils/config';
 import { ReactElement } from 'react';
 
 const StudioEditorBuilder = ({projectType}:{projectType: boolean}) : ReactElement => {
@@ -31,7 +31,6 @@ const StudioEditorBuilder = ({projectType}:{projectType: boolean}) : ReactElemen
   // }
 
   return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
       <StudioEditor
           options={{
             licenseKey: process.env.LICENSE_KEY,
@@ -49,10 +48,8 @@ const StudioEditorBuilder = ({projectType}:{projectType: boolean}) : ReactElemen
             devices: {
               default: config.configDivice,
             }
-
           }}
         />
-    </div>
   );
 };
 
