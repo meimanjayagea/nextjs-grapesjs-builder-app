@@ -5,7 +5,7 @@ import grapesJsTailwind from 'grapesjs-tailwind';
 import { config } from '@/utils/config';
 import { ReactElement } from 'react';
 
-const StudioEditorBuilder = ({projectType}:{projectType: boolean}) : ReactElement => {
+export default function StudioEditorBuilder({projectType}:{projectType: boolean}) : ReactElement {
 
   // const configAssets = {
   //   storageType: 'self',
@@ -52,8 +52,6 @@ const StudioEditorBuilder = ({projectType}:{projectType: boolean}) : ReactElemen
         />
   );
 };
-
-export default StudioEditorBuilder;
 
 
 
