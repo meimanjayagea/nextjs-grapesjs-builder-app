@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic';
 import StudioEditor from '@grapesjs/studio-sdk/react';
 import 'grapesjs/dist/css/grapes.min.css';
 import '@grapesjs/studio-sdk/style';

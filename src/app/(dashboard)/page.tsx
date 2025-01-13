@@ -1,55 +1,52 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { File, PlusCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { ProductsTable } from './products-table';
-import { getProducts } from '@/lib/db';
+'use client';
+// import { useState } from 'react';
+import StudioEditorBuilder from '@/components/stodioeditor'
 
-export default async function ProductsPage(
-  props: {
-    searchParams: Promise<{ q: string; offset: string }>;
-  }
-) {
-  const searchParams = await props.searchParams;
-  const search = searchParams.q ?? '';
-  const offset = searchParams.offset ?? 0;
-  const { products, newOffset, totalProducts } = await getProducts(
-    search,
-    Number(offset)
-  );
+// export default function Home() {
+//   const [projectType, setProjectType] = useState<boolean>(false);
 
+//   return (
+//     <main className="flex h-screen flex-col justify-between p-5 gap-2">
+//       <div className="p-1 flex gap-5 items-center">
+//         <div className="font-bold">Builder APP</div>
+//         <button className="border rounded p-2" >
+//           Log Project Data
+//         </button>
+//         <button className="border rounded p-2">
+//           Log HTML/CSS
+//         </button>
+
+//         <label className="inline-flex items-center cursor-pointer p-2">
+//           <input type="checkbox" value='' className="sr-only peer" />
+//           <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+//           <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">{projectType ? 'web' : 'email'}</span>
+//         </label>
+
+//       </div>
+//       <div className="flex-1 w-full h-full overflow-hidden">
+        
+//       </div>
+//     </main>
+//   );
+// }
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
+} from '@/components/ui/card';
+
+export default function Dashboard() {
   return (
-    <Tabs defaultValue="all">
-      <div className="flex items-center">
-        <TabsList>
-          <TabsTrigger value="all">All</TabsTrigger>
-          <TabsTrigger value="active">Active</TabsTrigger>
-          <TabsTrigger value="draft">Draft</TabsTrigger>
-          <TabsTrigger value="archived" className="hidden sm:flex">
-            Archived
-          </TabsTrigger>
-        </TabsList>
-        <div className="ml-auto flex items-center gap-2">
-          <Button size="sm" variant="outline" className="h-8 gap-1">
-            <File className="h-3.5 w-3.5" />
-            <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-              Export
-            </span>
-          </Button>
-          <Button size="sm" className="h-8 gap-1">
-            <PlusCircle className="h-3.5 w-3.5" />
-            <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-              Add Product
-            </span>
-          </Button>
-        </div>
-      </div>
-      <TabsContent value="all">
-        <ProductsTable
-          products={products}
-          offset={newOffset ?? 0}
-          totalProducts={totalProducts}
-        />
-      </TabsContent>
-    </Tabs>
+    <Card>
+      <CardHeader>
+        <CardTitle>Dashboard</CardTitle>
+        <CardDescription>View all customers and their orders.</CardDescription>
+        <StudioEditorBuilder />
+      </CardHeader>
+      <CardContent />
+    </Card>
   );
 }
