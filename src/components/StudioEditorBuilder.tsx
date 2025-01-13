@@ -1,12 +1,11 @@
+import dynamic from 'next/dynamic';
 import StudioEditor from '@grapesjs/studio-sdk/react';
-import 'grapesjs/dist/css/grapes.min.css';
+// import 'grapesjs/dist/css/grapes.min.css';
 import '@grapesjs/studio-sdk/style';
 import grapesJsTailwind from 'grapesjs-tailwind';
-import { config } from '@/utils/config';
-import { ReactElement } from 'react';
+// import { config } from '@/utils/config';
 
-export default function StudioEditorBuilder({projectType}:{projectType: boolean}) : ReactElement {
-
+const StudioEditorBuilder : any = () => {
   // const configAssets = {
   //   storageType: 'self',
   //   onUpload: async ({ files }) => {
@@ -38,21 +37,25 @@ export default function StudioEditorBuilder({projectType}:{projectType: boolean}
               id: process.env.UNIQUE_END_USER_ID,
             },
             project: {
-              type: projectType ? 'web' : 'email',
+              type: 'web',
               id: process.env.UNIQUE_PROJECT_ID,
-              default : false
+              default : {
+                pages: [
+                  { name: 'Home', component: '<h1>Home page</h1>' },
+                ]
+              }
             },
             plugins: [
               grapesJsTailwind,
             ],
-            devices: {
-              default: config.configDivice,
-            }
+
           }}
         />
   );
 };
 
+export default dynamic(() => Promise.resolve(StudioEditorBuilder), { ssr: false });
 
-
-
+            // devices: {
+            //   default: config.configDivice,
+            // }
