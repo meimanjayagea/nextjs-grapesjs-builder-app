@@ -1,5 +1,5 @@
 'use client';
-import StudioEditorBuilder from '../../components/studioeditorbuilder'
+// import StudioEditorBuilder from '@/components/studioeditorbuilder'
 import React, { useState } from 'react';
 import {
   Card,
@@ -8,6 +8,9 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card';
+import StudioEditor from '@grapesjs/studio-sdk/react';
+import '@grapesjs/studio-sdk/style';
+import grapesJsTailwind from 'grapesjs-tailwind';
 
 export default function Home() {
   const [projectType, setProjectType] = useState<boolean>(false);
@@ -34,7 +37,17 @@ export default function Home() {
           </div>
 
           <div className="flex-1 w-full h-full overflow-hidden">
-          <StudioEditorBuilder />
+          <StudioEditor
+            options={{
+              project: {
+                type: 'web',
+                default: {
+                  pages: false
+                },
+              },
+              plugins: [grapesJsTailwind]
+            }}
+          />
           </div>
         </div>
       </CardHeader>
