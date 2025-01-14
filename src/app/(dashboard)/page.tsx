@@ -1,5 +1,5 @@
 'use client';
-import StudioEditor from '@/components/studioeditorbuilder'
+import StudioEditor from '@/components/StudioEditorBuilder'
 import {
   Card,
   CardContent,
