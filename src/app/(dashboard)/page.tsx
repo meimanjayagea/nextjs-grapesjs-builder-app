@@ -1,7 +1,6 @@
 'use client';
-import StudioEditorBuilder from '@/components/studioeditorbuilder'
+import StudioEditorBuilder from '../../components/studioeditorbuilder'
 import React, { useState } from 'react';
-import grapesJsTailwind from 'grapesjs-tailwind';
 import {
   Card,
   CardContent,
