@@ -103,36 +103,7 @@ const StudioEditorBuilder: React.FC<StudioEditorBuilderProps> = () => {
           editor => editor.onReady(() => {
               editor?.runCommand('get-tailwindCss');
           }),
-        ],
-        assets: {
-          storageType: 'self',
-          onUpload: async ({ files }) => {
-            const body = new FormData();
-            for (const file of files) {
-              body.append('files', file);
-            }
-            const response = await fetch('ASSETS_UPLOAD_URL', { method: 'POST', body });
-            const result = await response.json();
-            return result;
-          },
-          onLoad: async () => {
-            // Load assets from your server
-            const response = await fetch('ASSETS_LOAD_URL');
-            const result = await response.json();
-            // you can also provide default assets here
-            return [ { src: 'ASSET_URL' }, ...result ];
-          },
-          // Provide a custom handler for deleting assets
-          onDelete: async ({ assets }) => {
-            const body = JSON.stringify(assets);
-            await fetch('ASSETS_DELETE_URL', { method: 'DELETE', body });
-          }
-        },
-        storage: {
-          type: 'cloud',
-          autosaveChanges: 100,
-          autosaveIntervalMs: 10000
-        }
+        ]
       }}
     />
     </div>
