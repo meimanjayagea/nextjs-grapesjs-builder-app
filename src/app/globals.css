@@ -90,3 +90,16 @@ input[type='search']::-moz-search-cancel-button {
 input[type='search']::-ms-clear {
   display: none;
 }
+
+
+/* Make blocks full width */
+.gjs-block {
+  padding: 0 !important;
+  width: 100% !important;
+  min-height: auto !important;
+}
+
+/* Fit icons properly */
+.gjs-block svg {
+  width: 100%;
+}
