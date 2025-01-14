@@ -87,18 +87,52 @@ const StudioEditorBuilder: React.FC<StudioEditorBuilderProps> = () => {
     <StudioEditor
       onReady={onReady}
       options={{
+        licenseKey: process.env.LICENSE_KEY,
         project: {
           type:'web',
+          id: process.env.UNIQUE_PROJECT_ID,
           default: {
             pages: false
           },
         },
+        identity: {
+          id: process.env.UNIQUE_END_USER_ID
+        },
         plugins: [
           grapesJsTailwind,
           editor => editor.onReady(() => {
-              editor.runCommand('studio:get-tailwindCss');
+              editor?.runCommand('get-tailwindCss');
           }),
-        ]
+        ],
+        assets: {
+          storageType: 'self',
+          onUpload: async ({ files }) => {
+            const body = new FormData();
+            for (const file of files) {
+              body.append('files', file);
+            }
+            const response = await fetch('ASSETS_UPLOAD_URL', { method: 'POST', body });
+            const result = await response.json();
+            return result;
+          },
+          onLoad: async () => {
+            // Load assets from your server
+            const response = await fetch('ASSETS_LOAD_URL');
+            const result = await response.json();
+            // you can also provide default assets here
+            return [ { src: 'ASSET_URL' }, ...result ];
+          },
+          // Provide a custom handler for deleting assets
+          onDelete: async ({ assets }) => {
+            const body = JSON.stringify(assets);
+            await fetch('ASSETS_DELETE_URL', { method: 'DELETE', body });
+          }
+        },
+        storage: {
+          type: 'cloud',
+          autosaveChanges: 100,
+          autosaveIntervalMs: 10000
+        }
       }}
     />
     </div>
