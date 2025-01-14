@@ -92,7 +92,11 @@ const StudioEditorBuilder: React.FC<StudioEditorBuilderProps> = () => {
           type:'web',
           id: process.env.UNIQUE_PROJECT_ID,
           default: {
-            pages: false
+            pages: [
+              { name: 'Home', component: '<h1>Home page</h1>' },
+              { name: 'About', component: '<h1>About page</h1>' },
+              { name: 'Contact', component: '<h1>Contact page</h1>' },
+            ]
           },
         },
         identity: {
