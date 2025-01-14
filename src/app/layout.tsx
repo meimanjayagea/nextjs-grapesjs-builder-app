@@ -2,6 +2,7 @@
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import localFont from "next/font/local";
 import "./globals.css";
+import "./styled-custom.scss";
 
 import {Analytics } from '@vercel/analytics/react';
 
