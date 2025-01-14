@@ -35,43 +35,11 @@ export default function Home() {
           </div>
 
           <div className="flex-1 w-full h-full overflow-hidden">
-          <StudioEditorBuilder
-            pages={[
-              { name: 'Home', component: '<h1>Welcome to Home Page</h1>' },
-              { name: 'About', component: '<h1>About Us</h1>' },
-            ]}
-            options={{
-              plugins: [grapesJsTailwind],
-            }}
-            />
+          <StudioEditorBuilder />
           </div>
         </div>
       </CardHeader>
       <CardContent />
     </Card>
-      
-    
   );
 }
-
-
-// import {
-//   Card,
-//   CardContent,
-//   CardDescription,
-//   CardHeader,
-//   CardTitle
-// } from '@/components/ui/card';
-
-// export default function Dashboard() {
-//   return (
-//     <Card>
-//       <CardHeader>
-//         <CardTitle>Dashboard</CardTitle>
-//         <CardDescription>View all customers and their orders.</CardDescription>
-//         <StudioEditorBuilder projectType={false} />
-//       </CardHeader>
-//       <CardContent />
-//     </Card>
-//   );
-// }
