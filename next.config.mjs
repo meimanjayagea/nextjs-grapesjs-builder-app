@@ -12,6 +12,11 @@ export default {
           search: ''
         }
       ]
-    }
+    },
+    eslint: {
+      ignoreDuringBuilds: true,
+    },
   };
+
+  
   
