@@ -15,7 +15,7 @@ const StudioEditorBuilder: React.FC<StudioEditorBuilderProps> = () => {
   const [projectType, setProjectType] = useState<boolean>(true);
   const [editor, setEditor] = useState<Editor>();
 
-    const onReady = (editor: Editor) => {
+    const onReady = (editor : Editor) => {
       console.log('Editor loaded', editor);
       setEditor(editor);
     };
@@ -112,5 +112,5 @@ const StudioEditorBuilder: React.FC<StudioEditorBuilderProps> = () => {
 };
 
 // Gunakan dynamic untuk menghindari SSR
-export default dynamic(() => Promise.resolve(StudioEditorBuilder), { ssr: false });
+export default dynamic(() => Promise.resolve(StudioEditorBuilder), { ssr: true });
 
