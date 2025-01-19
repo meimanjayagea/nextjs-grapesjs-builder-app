@@ -1,6 +1,17 @@
 {
-  "name": "nextjs-grapesjs-builder-app",
+  "name": "coartdev",
   "version": "0.1.0",
+  "description": "Web App | coartdev",
+  "author": {
+    "email": "jayameiman17@gmail.com", 
+    "name": "Meiman Jaya gea", 
+    "url": "wwww.coartdev.my.id"
+  },
+  "repository": {
+    "directory": "",
+    "type": "",
+    "url": ""
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 import { useState } from "react";
 import axios from "axios";
 
@@ -27,7 +26,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
       <div className="w-full max-w-lg bg-white shadow-lg rounded-lg p-6">
         <h1 className="text-2xl font-bold text-gray-800 text-center mb-4">ChatGPT Clone</h1>
         
@@ -35,7 +34,7 @@ export default function Home() {
           {chats.map((chat, index) => (
             <div
               key={index}
-              className={`p-2 rounded-lg my-2 ${chat.role === "user" ? "bg-green-400 text-gray-900 text-right" : "bg-gray-900 text-white text-left"}`}
+              className={`p-2 rounded-lg my-2 ${chat.role === "user" ? "bg-blue-500 text-white text-right" : "bg-green-500 text-white text-left"}`}
             >
               <strong>{chat.role === "user" ? "You" : "Bot"}:</strong> {chat.content}
             </div>
@@ -54,7 +53,7 @@ export default function Home() {
           />
           <button
             onClick={sendMessage}
-            className="bg-green-400 text-white px-4 py-2 rounded-r-lg hover:bg-gray-900"
+            className="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700"
           >
             Kirim
           </button>

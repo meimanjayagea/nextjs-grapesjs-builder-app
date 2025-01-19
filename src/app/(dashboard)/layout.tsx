@@ -61,18 +61,18 @@ function DesktopNav() {
     <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
       <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
         <Link
-          href="/dashborad"
+          href="/dashboard"
           className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
         >
           <VercelLogo className="h-3 w-3 transition-all group-hover:scale-110" />
-          <span className="sr-only">Acme Inc</span>
+          <span className="sr-only">Coartdev</span>
         </Link>
 
-        <NavItem href="/dashborad" label="Dashboard">
+        <NavItem href="/dashboard" label="Dashboard">
           <Home className="h-5 w-5" />
         </NavItem>
 
-        <NavItem href="/chat" label="Orders">
+        <NavItem href="/article" label="Orders">
           <ShoppingCart className="h-5 w-5" />
         </NavItem>
 
@@ -80,11 +80,11 @@ function DesktopNav() {
           <Package className="h-5 w-5" />
         </NavItem>
 
-        <NavItem href="/customers" label="Customers">
+        <NavItem href="/documentation" label="Customers">
           <Users2 className="h-5 w-5" />
         </NavItem>
 
-        <NavItem href="/orders" label="Analytics">
+        <NavItem href="/document" label="Analytics">
           <LineChart className="h-5 w-5" />
         </NavItem>
       </nav>
@@ -118,11 +118,11 @@ function MobileNav() {
       <SheetContent side="left" className="sm:max-w-xs">
         <nav className="grid gap-6 text-lg font-medium">
           <Link
-            href="/dashborad"
+            href="/dashboard"
             className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
           >
             <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
-            <span className="sr-only">Vercel</span>
+            <span className="sr-only">coartdev</span>
           </Link>
           <Link
             href="/dashborad"
@@ -132,28 +132,28 @@ function MobileNav() {
             Dashboard
           </Link>
           <Link
-            href="/orders"
+            href="/article"
             className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
           >
             <ShoppingCart className="h-5 w-5" />
-            Orders
+            Article
           </Link>
           <Link
-            href="/products"
+            href="/documentation"
             className="flex items-center gap-4 px-2.5 text-foreground"
           >
             <Package className="h-5 w-5" />
-            Products
+            Documentation
           </Link>
           <Link
-            href="/customers"
+            href="/document"
             className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
           >
             <Users2 className="h-5 w-5" />
-            Customers
+            Document
           </Link>
           <Link
-            href="/dashborad"
+            href="/setting"
             className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
           >
             <LineChart className="h-5 w-5" />
@@ -171,18 +171,18 @@ function DashboardBreadcrumb() {
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link href="/dashborad">Dashboard</Link>
+            <Link href="/dashboard">Dashboard</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link href="/products">Products</Link>
+            <Link href="/Article">Article</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage>All Products</BreadcrumbPage>
+          <BreadcrumbPage>More article</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

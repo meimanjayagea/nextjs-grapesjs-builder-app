@@ -10,7 +10,7 @@ export default function OrderPage() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Orders</CardTitle>
+        <CardTitle>Documentations</CardTitle>
         <CardDescription>View all customers and their orders.</CardDescription>
       </CardHeader>
       <CardContent />

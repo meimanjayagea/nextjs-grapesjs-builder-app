@@ -35,7 +35,8 @@ export default function RootLayout({children}: {children: React.ReactNode;}) {
             <meta property="og:title" content="coartdev | Page Chat AI, Web Builder, Article, and Documentation " />
             <meta property="og:description" content="Web App Portofolio and Personal Documentation" />
             <meta property="og:type" content="Meiman Jaya Gea | Page Chat AI, Web Builder, Article, and Documentation  " />
-            <link rel="icon" href="./favicon.ico" sizes="any" />
+            <link rel="icon" href="/favicon.ico" sizes="any" />
+            <link rel="icon" href="/favicon.ico?<generated>" type="image/<generated>" sizes="<generated>"/>
         </Head>
       <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
