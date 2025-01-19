@@ -35,7 +35,7 @@ export default function Home() {
           {chats.map((chat, index) => (
             <div
               key={index}
-              className={`p-2 rounded-lg my-2 ${chat.role === "user" ? "bg-blue-500 text-white text-right" : "bg-green-500 text-white text-left"}`}
+              className={`p-2 rounded-lg my-2 ${chat.role === "user" ? "bg-green-400 text-gray-900 text-right" : "bg-gray-900 text-white text-left"}`}
             >
               <strong>{chat.role === "user" ? "You" : "Bot"}:</strong> {chat.content}
             </div>
@@ -54,7 +54,7 @@ export default function Home() {
           />
           <button
             onClick={sendMessage}
-            className="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700"
+            className="bg-green-400 text-white px-4 py-2 rounded-r-lg hover:bg-gray-900"
           >
             Kirim
           </button>
