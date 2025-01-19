@@ -103,3 +103,123 @@ input[type='search']::-ms-clear {
 .gjs-block svg {
   width: 100%;
 }
+
+#outlook a {
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+
+body {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	text-size-adjust: 100%;
+	margin: 0;
+}
+
+table,
+td {
+	border-collapse: collapse;
+}
+
+img {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: initial;
+	border-right-style: initial;
+	border-bottom-style: initial;
+	border-left-style: initial;
+	border-top-color: initial;
+	border-right-color: initial;
+	border-bottom-color: initial;
+	border-left-color: initial;
+	border-image-source: initial;
+	border-image-slice: initial;
+	border-image-width: initial;
+	border-image-outset: initial;
+	border-image-repeat: initial;
+	height: auto;
+	line-height: 100%;
+	outline-color: initial;
+	outline-style: none;
+	outline-width: initial;
+	text-decoration-line: none;
+	text-decoration-thickness: initial;
+	text-decoration-style: initial;
+	text-decoration-color: initial;
+}
+
+p {
+	display: block;
+	margin-top: 13px;
+	margin-right: 0px;
+	margin-bottom: 13px;
+	margin-left: 0px;
+}
+
+.moz-text-html .mj-column-per-100 {
+	width: 100% !important;
+	max-width: 100%;
+}
+
+.moz-text-html .mj-column-per-25 {
+	width: 25% !important;
+	max-width: 25%;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+
+#irdvhj {
+	color: rgba(255, 255, 255, 1);
+}
+
+#ifvxwy {
+	background-color: rgba(0, 0, 0, 1);
+}
+
+
+#iidua8 {
+	padding-top: 55px;
+	padding-right: 20px;
+	padding-bottom: 96px;
+	padding-left: 20px;
+	object-fit: cover;
+}
+
+#itdnxj {
+	background-color: rgba(0, 0, 0, 1);
+}
+
+#iriexh {
+	color: rgba(255, 255, 255, 1);
+}
+
+#i01s4k {
+	color: rgba(255, 255, 255, 1);
+}
+
+#iy2shw {
+	color: rgba(255, 255, 255, 1);
+}
+
+
+#icdreg2 {
+	color: rgba(0, 0, 0, 1);
+	background-color: rgba(255, 255, 255, 1);
+}
+
+#iwso0s {
+	color: rgba(0, 0, 0, 1);
+}

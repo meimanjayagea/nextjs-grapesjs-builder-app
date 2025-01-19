@@ -12,12 +12,13 @@ const StudioEditor = dynamic(
   () => import('@grapesjs/studio-sdk/react').then((mod) => mod.StudioEditor),
   { ssr: false } // Disable server-side rendering
 );
-import type { Editor } from 'grapesjs';
+import { Editor } from 'grapesjs';
 import '@grapesjs/studio-sdk/style';
 import grapesJsTailwind from 'grapesjs-tailwind';
+import grapesJsBootstrap5 from 'grapesjs-blocks-bootstrap5';
 
 // Definisi tipe properti untuk komponen
-interface StudioEditorBuilderProps {}
+type StudioEditorBuilderProps = object
 
 const StudioEditorBuilder: React.FC<StudioEditorBuilderProps> = () => {
   const [projectType, setProjectType] = useState<boolean>(true);
@@ -126,8 +127,7 @@ const StudioEditorBuilder: React.FC<StudioEditorBuilderProps> = () => {
         identity: {
           id: process.env.UNIQUE_END_USER_ID
         },
-        plugins: [
-          grapesJsTailwind,
+        plugins: [grapesJsTailwind,
           editor => editor.onReady(() => {
               editor?.runCommand('get-tailwindCss');
           }),
