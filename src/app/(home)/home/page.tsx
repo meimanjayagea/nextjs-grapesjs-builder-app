@@ -10,8 +10,8 @@ export default function HomePage() {
             <h1><b>COARTDEV </b></h1>
             <p className="mb-8 leading-relaxed italic bold">Santai, tersenyum, dan nikmati hidup! Karena hidup adalah perjalanan yang berharga. Nikmati setiap detiknya, temukan kebahagiaan dalam hal-hal sederhana, dan ciptakan kenangan yang berarti serta jalani kebahagiaan dalam setiap momen dan jalani hidup dengan penuh semangat!! 😊✨</p>
             <div className="flex justify-center gap-2">
-              <Link href={'/documentation'} type="button" className="inline-flex text-white bg-green-400 border-0 py-2 px-6 focus:outline-none hover:bg-green-400 rounded text-lg">Go to app</Link>
-              <Link href={'/dashboard'} type="button" id="i9vauf" className="inline-flex text-white bg-green-400 border-0 py-2 px-6 focus:outline-none hover:bg-green-400 rounded text-lg">Get Started</Link>
+              <Link href={'/documentation'} type="button" className="inline-flex text-white bg-green-400 border-0 py-2 px-6 focus:outline-none hover:bg-green-400 rounded text-lg">Get Started</Link>
+              <Link href={'/web-builder'} type="button" id="i9vauf" className="inline-flex text-white bg-gray-900 border-0 py-2 px-6 focus:outline-none hover:bg-green-400 rounded text-lg">Web Builder</Link>
             </div>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">

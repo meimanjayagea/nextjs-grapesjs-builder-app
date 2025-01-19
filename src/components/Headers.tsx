@@ -18,8 +18,9 @@ export default function Headers() {
                     <Link href={"/home"} className="mr-5 hover:text-green-400">Home</Link>
                     <Link href={"/chat-gpt"} className="mr-5 hover:text-green-400">Chat AI</Link>
                     <Link href={"/web-builder"} className="mr-5 hover:text-green-400">Web Builder</Link>
-                    <Link href={"/documentation"} className="mr-5 hover:text-green-400">Dokumentation</Link>
-                    <Link href={'/login'} className="inline-flex items-center bg-green-400 border-0 py-2 px-3 focus:outline-none hover:bg-green-400 rounded text-base mt-4 md:mt-0">Signin</Link>
+                    <Link href={"/article"} className="mr-5 hover:text-green-400">Article</Link>
+                    <Link href={"/article"} className="mr-5 hover:text-green-400">Documents</Link>
+                    <Link href={'/login'} className="inline-flex items-center bg-green-400 border-0 py-2 px-3 focus:outline-none hover:bg-green-400 rounded text-base mt-4 md:mt-0">Dashboard</Link>
                 </nav>
             </div>
         </header>
