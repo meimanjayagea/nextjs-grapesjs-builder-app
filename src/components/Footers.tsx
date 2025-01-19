@@ -7,7 +7,7 @@ export default function Footers() {
     return (
         <footer className="bg-gray-900 px-10 text-gray-600 body-font">
             <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-                <Link href={"/home"} className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                <Link href={"/home"} className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900 hover:text-green-400">
                     {/* <svg fill="none"
                         stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24"
                         className="w-10 h-10 text-white p-2 bg-green-400 rounded-full">
@@ -18,7 +18,7 @@ export default function Footers() {
                 </Link>
                 <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
                     © {new Date().getFullYear()} coartdev —<Link href="/home" rel="noopener noreferrer" target="_blank" id="iy2shw"
-                        className="text-gray-600 ml-1">Meiman Jaya Gea</Link>
+                        className="text-gray-600 ml-1 hover:text-green-400">Meiman Jaya Gea</Link>
                 </p>
                 <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
                     <Link href={"/home"} className="text-gray-500">
