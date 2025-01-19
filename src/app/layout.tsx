@@ -31,12 +31,11 @@ export default function RootLayout({children}: {children: React.ReactNode;}) {
     <html lang="en" suppressHydrationWarning>
        <Head>
             <title>coartdev</title>
-            <meta name="website app | Meiman Jaya gea" content="Meiman jaya Gea | Page Chat AI, Web Builder, Article, and Documentation" />
+            <meta name="website app | Meiman Jaya Gea" content="Meiman jaya Gea | Page Chat AI, Web Builder, Article, and Documentation" />
             <meta property="og:title" content="coartdev | Page Chat AI, Web Builder, Article, and Documentation " />
             <meta property="og:description" content="Web App Portofolio and Personal Documentation" />
             <meta property="og:type" content="Meiman Jaya Gea | Page Chat AI, Web Builder, Article, and Documentation  " />
-            <link rel="icon" href="/favicon.ico" sizes="any" />
-            <link rel="icon" href="/favicon.ico?<generated>" type="image/<generated>" sizes="<generated>"/>
+            <link rel="icon" href='/favicon.ico' sizes="any" />
         </Head>
       <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}

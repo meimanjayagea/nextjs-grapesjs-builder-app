@@ -1,10 +1,6 @@
+"use client"
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
-// import StudioEditor,{
-//   StudioCommands,
-//   ToastVariant,
-// } from '@grapesjs/studio-sdk/react';
-
 import { StudioCommands, ToastVariant } from '@grapesjs/studio-sdk/react';
 
 // Impor StudioEditor secara dinamis
@@ -15,81 +11,64 @@ const StudioEditor = dynamic(
 import { Editor } from 'grapesjs';
 import '@grapesjs/studio-sdk/style';
 import grapesJsTailwind from 'grapesjs-tailwind';
-import grapesJsBootstrap5 from 'grapesjs-blocks-bootstrap5';
 
 // Definisi tipe properti untuk komponen
 type StudioEditorBuilderProps = object
 
 const StudioEditorBuilder: React.FC<StudioEditorBuilderProps> = () => {
   const [projectType, setProjectType] = useState<boolean>(true);
-  // const [editor, setEditor] = useState<Editor>();
+  const [editor, setEditor] = useState<Editor>();
 
-  //   const onReady = (editor : Editor) => {
-  //     console.log('Editor loaded', editor);
-  //     setEditor(editor);
-  //   };
+    const onReady = (editor : Editor) => {
+      console.log('Editor loaded', editor);
+      setEditor(editor);
+    };
   
-  //   const showToast = (id: string) =>
-  //     editor?.runCommand(StudioCommands.toastAdd, {
-  //       id,
-  //       header: 'Toast header',
-  //       content: 'Data logged in console',
-  //       variant: ToastVariant.Info,
-  //     });
-  
-  //   const getProjetData = () => {
-  //     if (editor) {
-  //       console.log({ projectData: editor?.getProjectData() });
-  //       showToast('log-project-data');
-  //     }
-  //   };
-  
-  //   const getExportData = () => {
-  //     if (editor) {
-  //       console.log({ html: editor?.getHtml(), css: editor?.getCss() });
-  //       showToast('log-html-css');
-  //     }
-  //   };
-  
-  //   const getTailwindPlugin =()=>{
-  //     if (editor) {
-  //       console.log({ projectData: editor.runCommand('get-tailwindCss')});
-  //       showToast('log-project-data');
-  //     }
-  //   }
-  
-  //   const getGlobalStyle =()=>{
-  //     if (editor) {
-  //       editor.runCommand('studio:layoutToggle', {
-  //           id: 'gs',
-  //           layout: 'panelGlobalStyles',
-  //           header: { label: 'Global Styles' },
-  //           placer: { type: 'absolute', position: 'right' }
-  //         })
-  //     }
-  //   }
-
-    const handleEditorReady = (editor: any) => {
-      // Editor is fully initialized
-      console.log('StudioEditor is ready', editor);
-  
-      // Example: Adding a custom command
-      editor.Commands.add('custom-alert', {
-        run() {
-          alert('Custom command executed!');
-        },
+    const showToast = (id: string) =>
+      editor?.runCommand(StudioCommands.toastAdd, {
+        id,
+        header: 'Toast header',
+        content: 'Data logged in console',
+        variant: ToastVariant.Info,
       });
   
-      // Example: Log all current blocks
-      const blocks = editor.BlockManager.getAll();
-      console.log('Available blocks:', blocks);
+    const getProjetData = () => {
+      if (editor) {
+        console.log({ projectData: editor?.getProjectData() });
+        showToast('log-project-data');
+      }
     };
+  
+    const getExportData = () => {
+      if (editor) {
+        console.log({ html: editor?.getHtml(), css: editor?.getCss() });
+        showToast('log-html-css');
+      }
+    };
+  
+    const getTailwindPlugin =()=>{
+      if (editor) {
+        console.log({ projectData: editor.runCommand('get-tailwindCss')});
+        showToast('log-project-data');
+      }
+    }
+  
+    const getGlobalStyle =()=>{
+      if (editor) {
+        editor.runCommand('studio:layoutToggle', {
+            id: 'gs',
+            layout: 'panelGlobalStyles',
+            header: { label: 'Global Styles' },
+            placer: { type: 'absolute', position: 'right' }
+          })
+      }
+    }
 
   return (
     <div className="flex h-screen flex-col justify-between pt-4">
       <div className="flex gap-5 items-center bg-black text-white p-1">
         <div className="font-bold"></div>
-        {/* <button className="border rounded px-1" onClick={getProjetData}>
+        <button className="border rounded px-1" onClick={getProjetData}>
           Log Project Data
         </button>
         <button className="border rounded px-1" onClick={getExportData}>
@@ -100,7 +79,7 @@ const StudioEditorBuilder: React.FC<StudioEditorBuilderProps> = () => {
         </button>
         <button className="border rounded px-1" onClick={getGlobalStyle}>
           Global Style
-        </button> */}
+        </button>
         <label className="inline-flex items-center cursor-pointer p-2" onClick={() => setProjectType(!projectType)}>
           <input type="checkbox" value='' className="sr-only peer"/>
           <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
@@ -110,12 +89,12 @@ const StudioEditorBuilder: React.FC<StudioEditorBuilderProps> = () => {
 
     <div className="flex-1 w-full h-full overflow-hidden">
     <StudioEditor
-      onReady={handleEditorReady}
+      onReady={onReady}
       options={{
-        licenseKey: process.env.LICENSE_KEY,
+        licenseKey: `${process.env.LICENSE_KEY}`,
         project: {
           type:'web',
-          id: process.env.UNIQUE_PROJECT_ID,
+          id: `${process.env.UNIQUE_PROJECT_ID}`,
           default: {
             pages: [
               { name: 'Home', component: '<h1>Home page</h1>' },
@@ -125,7 +104,7 @@ const StudioEditorBuilder: React.FC<StudioEditorBuilderProps> = () => {
           },
         },
         identity: {
-          id: process.env.UNIQUE_END_USER_ID
+          id: `${process.env.UNIQUE_END_USER_ID}`,
         },
         plugins: [grapesJsTailwind,
           editor => editor.onReady(() => {
