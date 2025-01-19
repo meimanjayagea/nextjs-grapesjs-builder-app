@@ -22,8 +22,8 @@ export default function LoginPage() {
         </CardHeader>
         <CardContent>
           <Tabs>
-            <TabsList>
-              <TabsTrigger value='ahas' />
+            <TabsList >
+              <TabsTrigger value='Email' about='kjhdkjsd' />
             </TabsList>
 
             <TabsContent value='jhjd'/>
