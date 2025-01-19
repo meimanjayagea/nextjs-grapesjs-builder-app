@@ -25,11 +25,11 @@
     "baseUrl": "./src",
     "paths": {
       "@/*": ["*"],
-      "components/*": ["components/*"],
-      "lib/*": ["lib/*"],
-      "types/*": ["types/*"],
+      "components/*": ["src/components/*"],
+      "lib/*": ["src/lib/*"],
+      "types/*": ["src/types/*"],
+      "utils/*":["src/utils/*"],
       "public/*":["public/*"],
-      "utils/*":["utils/*"]
     },
     "target": "ES2017"
   },

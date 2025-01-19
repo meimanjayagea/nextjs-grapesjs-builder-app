@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button';
-import { Tabs, TabsList, TabsTrigger, TabsContent }from '@/components/ui/tabs';
 import {
   Card,
   CardDescription,
@@ -9,31 +8,35 @@ import {
   CardContent
 } from '@/components/ui/card';
 import { signIn } from '@/lib/auth';
+import { Input } from '@/components/ui/input';
+import { Label } from '@radix-ui/react-dropdown-menu';
+import logo from "@/../public/coartdev.png"
+import Image from 'next/image';
 
 export default function LoginPage() {
   return (
     <div className="min-h-screen flex justify-center items-start md:items-center p-8">
       <Card className="w-full max-w-sm">
-        <CardHeader>
+        <CardHeader className="flex justify-center items-center justify-center">
+          <Image src={logo} alt="" className="rounded-full w-10 h-10 hover:text-green-400" />
           <CardTitle className="text-2xl">Login</CardTitle>
           <CardDescription>
-            This demo uses GitHub and Google for authentication.
+          login app
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <Tabs>
-            <TabsList >
-              <TabsTrigger value='Email' about='kjhdkjsd' />
-            </TabsList>
-
-            <TabsContent value='jhjd'/>
-          </Tabs>
+        <CardContent className='flex flex-wrap gap-2'>
+          <Label>Email :</Label>
+          <Input />
+          <Label>Password :</Label>
+          <Input />
+          <Button className="w-full bg-green-400 mt-2">Sign in</Button>
         </CardContent>
-        <CardFooter>
+        <hr />
+        <CardFooter className='mt-5'>
           <form
             action={async () => {
               'use server';
-               await signIn('github', {redirectTo: '/dashboard'  });
+              await signIn('github', { redirectTo: '/' });
             }}
             className="w-full"
           >
@@ -44,7 +47,7 @@ export default function LoginPage() {
           <form
             action={async () => {
               'use server';
-               await signIn('google', {redirectTo: '/dashboard'  });
+              await signIn('google', { redirectTo: '/' });
             }}
             className="w-full"
           >

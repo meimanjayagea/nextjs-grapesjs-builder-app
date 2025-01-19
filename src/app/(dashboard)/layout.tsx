@@ -1,15 +1,16 @@
 'use client'
 
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Home,
-  LineChart,
   Package,
   Package2,
   PanelLeft,
   Settings,
-  ShoppingCart,
-  Users2
+  FileCode,
+  BookMarked,
+  BookOpen
 } from 'lucide-react';
 
 import {
@@ -29,10 +30,10 @@ import {
 } from '@/components/ui/tooltip';
 import { Analytics } from '@vercel/analytics/react';
 import { User } from './user';
-import { VercelLogo } from '@/components/icons';
 import Providers from './providers';
 import { NavItem } from './nav-item';
 import { SearchInput } from './search';
+import logo from '@/../public/coartdev.png'
 
 export default function DashboardLayout({children}: {children: React.ReactNode;}) {
   return (
@@ -64,7 +65,7 @@ function DesktopNav() {
           href="/dashboard"
           className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
         >
-          <VercelLogo className="h-3 w-3 transition-all group-hover:scale-110" />
+          <Image alt="logo" src={logo} className="transition-all group-hover:scale-110 rounded-full" />
           <span className="sr-only">Coartdev</span>
         </Link>
 
@@ -73,7 +74,7 @@ function DesktopNav() {
         </NavItem>
 
         <NavItem href="/article" label="Orders">
-          <ShoppingCart className="h-5 w-5" />
+          <BookOpen className="h-5 w-5" />
         </NavItem>
 
         <NavItem href="/products" label="Products">
@@ -81,11 +82,11 @@ function DesktopNav() {
         </NavItem>
 
         <NavItem href="/documentation" label="Customers">
-          <Users2 className="h-5 w-5" />
+          <BookMarked className="h-5 w-5" />
         </NavItem>
 
         <NavItem href="/document" label="Analytics">
-          <LineChart className="h-5 w-5" />
+          <FileCode className="h-5 w-5" />
         </NavItem>
       </nav>
       <nav className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">
@@ -135,28 +136,22 @@ function MobileNav() {
             href="/article"
             className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
           >
-            <ShoppingCart className="h-5 w-5" />
+            <BookOpen className="h-5 w-5" />
             Article
           </Link>
           <Link
             href="/documentation"
             className="flex items-center gap-4 px-2.5 text-foreground"
           >
-            <Package className="h-5 w-5" />
+            <BookMarked className="h-5 w-5" />
             Documentation
           </Link>
-          <Link
-            href="/document"
-            className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-          >
-            <Users2 className="h-5 w-5" />
-            Document
+          <Link href="/document" className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground">
+            <FileCode className="h-5 w-5" /> Document
           </Link>
-          <Link
-            href="/setting"
-            className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-          >
-            <LineChart className="h-5 w-5" />
+
+          <Link href="/setting" className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground">
+            <Settings className="h-5 w-5" />
             Settings
           </Link>
         </nav>
