@@ -11,10 +11,10 @@ import {
 export default function Home() {
 
 
-  return (
+  return (  
     <Card>
       <CardHeader>
-        <CardTitle>Builder APP</CardTitle>
+        <CardTitle>Web Builder</CardTitle>
         <CardDescription>Create a new project to build a website or homepage application.</CardDescription>
           <StudioEditor />
       </CardHeader>
