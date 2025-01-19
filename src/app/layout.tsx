@@ -1,6 +1,7 @@
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import localFont from "next/font/local";
+import Head from 'next/head';
 import "./globals.css";
 import "./styled-custom.scss";
 
@@ -20,16 +21,23 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "coartdev",
-  description: 'Meiman Jaya Gea | APP'
+  description: 'website | Meiman Jaya Gea',
+  key: "coartdev"
 };
 
 
 export default function RootLayout({children}: {children: React.ReactNode;}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+       <Head>
+            <title>coartdev</title>
+            <meta name="website app | Meiman Jaya gea" content="Meiman jaya Gea | Page Chat AI, Web Builder, Article, and Documentation" />
+            <meta property="og:title" content="coartdev | Page Chat AI, Web Builder, Article, and Documentation " />
+            <meta property="og:description" content="Web App Portofolio and Personal Documentation" />
+            <meta property="og:type" content="Meiman Jaya Gea | Page Chat AI, Web Builder, Article, and Documentation  " />
+            <link rel="icon" href="./favicon.ico" sizes="any" />
+        </Head>
+      <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
         <SpeedInsights />
         <Analytics />
