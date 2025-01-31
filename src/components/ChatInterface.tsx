@@ -36,7 +36,7 @@ export default function ChatInterface() {
         });
 
         const data = await response.json();
-        setMessages((prevMessages) => [...prevMessages, ...data]);
+        setMessages((prevMessages) => [...prevMessages, data]);
         
       } catch (error) {
         console.error('Error:', error);
