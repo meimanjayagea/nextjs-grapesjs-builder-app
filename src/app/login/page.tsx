@@ -43,6 +43,7 @@ export default function LoginPage() {
             <Button className="w-full">Sign in with GitHub</Button>
           </form>
         </CardFooter>
+        
         <CardFooter>
           <form
             action={async () => {

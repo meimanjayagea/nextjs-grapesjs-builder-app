@@ -17,7 +17,7 @@ export default function Headers() {
                 </Link>
                 <nav className="flex lg:w-2/5 flex-wrap items-center lg:justify-end md:ml-auto">
                     <Link href={"/home"} className="mr-5 hover:text-green-400">Home</Link>
-                    <Link href={"/chat-gpt"} className="mr-5 hover:text-green-400">Chat AI</Link>
+                    <Link href={"/chat-ai"} className="mr-5 hover:text-green-400">Chat AI</Link>
                     <Link href={"/web-builder"} className="mr-5 hover:text-green-400">Web Builder</Link>
                     <Link href={"/article"} className="mr-5 hover:text-green-400">Article</Link>
                     <Link href={"/documents"} className="mr-5 hover:text-green-400">Documents</Link>

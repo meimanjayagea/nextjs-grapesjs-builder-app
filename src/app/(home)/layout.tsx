@@ -2,14 +2,16 @@
 import { Analytics } from '@vercel/analytics/react';
 import Headers from "@/components/Headers";
 import Footers from "@/components/Footers";
+import { ToastProvider } from '@apideck/components'
 
-export default function DashboardLayout({ children }: { children: React.ReactNode; }) {
+
+export default function HomePage({children}: {children: React.ReactNode;}) {
     return (
-        <>
-            <Headers />
-            {children}
-            <Footers />
-            <Analytics />
-        </>
-    );
-}
+      <ToastProvider>
+        <Headers />
+          {children}
+        <Footers />
+        <Analytics />
+      </ToastProvider>
+    )
+  }
